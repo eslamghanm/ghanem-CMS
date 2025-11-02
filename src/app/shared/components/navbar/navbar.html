@@ -1,0 +1,54 @@
+<header class="sticky top-0 z-40 w-full backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-neutral-900/60 border-b border-neutral-200 dark:border-neutral-800">
+  <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <a routerLink="/dashboard" aria-label="&#x0627;&#x0644;&#x0635;&#x0641;&#x062D;&#x0629; &#x0627;&#x0644;&#x0631;&#x0626;&#x064A;&#x0633;&#x064A;&#x0629;" class="flex items-center font-semibold">
+      <img src="assets/logo.png" alt="&#x0634;&#x0639;&#x0627;&#x0631;" class="h-8 md:h-9 w-auto p-0.5 rounded-md ring-1 ring-neutral-200 dark:ring-neutral-700 bg-white" loading="eager" decoding="async" />
+    </a>
+    <button class="md:hidden rounded-md border px-2 py-1 text-sm border-neutral-200 dark:border-neutral-700" (click)="mobileOpen = !mobileOpen" aria-label="&#x0627;&#x0644;&#x0642;&#x0627;&#x0626;&#x0645;&#x0629;">
+      &#9776;
+    </button>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a routerLink="/dashboard" routerLinkActive="text-teal-600 dark:text-teal-400" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0644;&#x0648;&#x062D;&#x0629; &#x0627;&#x0644;&#x062A;&#x062D;&#x0643;&#x0645;</a>
+      <a routerLink="/patients" routerLinkActive="text-teal-600 dark:text-teal-400" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0645;&#x0631;&#x0636;&#x0649;</a>
+      <a routerLink="/treatments" routerLinkActive="text-teal-600 dark:text-teal-400" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0639;&#x0644;&#x0627;&#x062C;&#x0627;&#x062A;</a>
+      <a routerLink="/invoices" routerLinkActive="text-teal-600 dark:text-teal-400" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0641;&#x0648;&#x0627;&#x062A;&#x064A;&#x0631;</a>
+      <a routerLink="/settings" routerLinkActive="text-teal-600 dark:text-teal-400" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0625;&#x0639;&#x062F;&#x0627;&#x062F;&#x0627;&#x062A;</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <ng-container *ngIf="loggedIn; else authLinks">
+        <button class="rounded-md border px-3 py-1.5 text-sm shadow-sm hover:shadow transition border-neutral-200 dark:border-neutral-700" (click)="logout()">&#x062A;&#x0633;&#x062C;&#x064A;&#x0644; &#x0627;&#x0644;&#x062E;&#x0631;&#x0648;&#x062C;</button>
+      </ng-container>
+      <ng-template #authLinks>
+        <a routerLink="/login" class="text-sm hover:text-teal-600 dark:hover:text-teal-400">&#x062F;&#x062E;&#x0648;&#x0644;</a>
+        <a routerLink="/register" class="text-sm hover:text-teal-600 dark:hover:text-teal-400">&#x062A;&#x0633;&#x062C;&#x064A;&#x0644;</a>
+      </ng-template>
+      <button class="rounded-md border px-2.5 py-1.5 text-sm shadow-sm hover:shadow transition border-neutral-200 dark:border-neutral-700 flex items-center justify-center w-9 h-9" (click)="toggleTheme()" aria-label="&#x062A;&#x0628;&#x062F;&#x064A;&#x0644; &#x0627;&#x0644;&#x0645;&#x0638;&#x0647;&#x0631;">
+        <svg *ngIf="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg *ngIf="!dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <nav class="md:hidden border-t border-neutral-200 dark:border-neutral-800" *ngIf="mobileOpen">
+    <div class="px-4 py-2 flex flex-col gap-2 text-sm bg-white/80 dark:bg-neutral-900/80">
+      <a routerLink="/dashboard" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0644;&#x0648;&#x062D;&#x0629; &#x0627;&#x0644;&#x062A;&#x062D;&#x0643;&#x0645;</a>
+      <a routerLink="/patients" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0645;&#x0631;&#x0636;&#x0649;</a>
+      <a routerLink="/treatments" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0639;&#x0644;&#x0627;&#x062C;&#x0627;&#x062A;</a>
+      <a routerLink="/invoices" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0641;&#x0648;&#x0627;&#x062A;&#x064A;&#x0631;</a>
+      <a routerLink="/settings" class="hover:text-teal-600 dark:hover:text-teal-400">&#x0627;&#x0644;&#x0625;&#x0639;&#x062F;&#x0627;&#x062F;&#x0627;&#x062A;</a>
+      <div class="pt-2 border-t border-neutral-200 dark:border-neutral-800 flex items-center gap-3">
+        <ng-container *ngIf="loggedIn; else authLinks2">
+          <button class="rounded-md border px-3 py-1.5 text-sm shadow-sm hover:shadow transition border-neutral-200 dark:border-neutral-700" (click)="logout()">&#x062A;&#x0633;&#x062C;&#x064A;&#x0644; &#x0627;&#x0644;&#x062E;&#x0631;&#x0648;&#x062C;</button>
+        </ng-container>
+        <ng-template #authLinks2>
+          <a routerLink="/login" class="text-sm hover:text-teal-600 dark:hover:text-teal-400">&#x062F;&#x062E;&#x0648;&#x0644;</a>
+          <a routerLink="/register" class="text-sm hover:text-teal-600 dark:hover:text-teal-400">&#x062A;&#x0633;&#x062C;&#x064A;&#x0644;</a>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+</header>
+

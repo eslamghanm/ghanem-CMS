@@ -1,27 +1,72 @@
-# GhanemDental
+# Ghanem Dental — Dental Cost
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Modern Angular app to manage patients, treatments, and invoices for Ghanem Dental Clinic. All data is stored locally in the browser via `localStorage` under key `gh_dental_v1` — no backend required.
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Requirements: Node 18+ and npm.
+- Install: `npm install`
+- Run dev: `npm start` then open `http://localhost:4200`
+- Build: `npm run build`
+- Unit tests: `npm test`
+- E2E tests (optional): `npm run e2e` (uses Cypress)
 
-## Code scaffolding
+On first run, the app auto-loads seed data from `src/assets/seed/seed.json` (patients, treatments, invoices, settings) if no data exists.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Dashboard with KPI cards and sparkline
+- Patients: create/edit, search, filter, pagination
+- Treatments: catalog with add/edit and bulk import
+- Invoices: builder (select patient, add treatments, discount, tax), save draft/paid, print view, export JSON/CSV
+- Settings: clinic name, currency (EGP), tax, rounding, theme, export/import data, clear data
+- UX polish: responsive layout, Tailwind styling, dark mode toggle, toasts, smooth modal
+- Accessibility: keyboard-friendly forms, semantic HTML
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Architecture
 
-## Running unit tests
+- Angular 17 (module-based), TypeScript, Angular CLI
+- Tailwind CSS for styling, dark mode via `class` method
+- Feature modules (lazy): `dashboard`, `patients`, `treatments`, `invoices`, `settings`, `shared`
+- Services with `BehaviorSubject` state synced to `localStorage`
+- Models: `Patient`, `Treatment`, `Invoice`, `ClinicSettings`
+- Storage versioning and migration-ready structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## LocalStorage Schema
 
-## Running end-to-end tests
+Root key `gh_dental_v1` stores:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- `version`: number
+- `patients`: Patient[]
+- `treatments`: Treatment[]
+- `invoices`: Invoice[]
+- `settings`: ClinicSettings
 
-## Further help
+## Repo Layout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `src/app/core/models/*` — interfaces
+- `src/app/core/services/*` — LocalStorage, Patients, Treatments, Invoices, Settings, Toast, Theme, Seed
+- `src/app/core/utils/*` — helpers (uid, invoice-calc)
+- `src/app/features/*` — feature modules and components
+- `src/assets/seed/seed.json` — seed data
+- `tailwind.config.js`, `postcss.config.js` — Tailwind setup
+
+## One‑Minute Walkthrough
+
+1. Open app → Dashboard shows revenue/metrics and a sparkline.
+2. Add a patient in Patients → “Save Patient” (toast confirms).
+3. Add or import treatments in Treatments.
+4. Build an invoice in Invoices → select patient, add treatments, set discount → Save Draft or Save Paid. Use Print link for a clean print page.
+5. Settings → set tax/currency/theme, export/import or clear data.
+
+Data persists across reloads via localStorage.
+
+## Environment
+
+- Angular CLI: 17.x (Angular 16+ compatible code style)
+- Tailwind CSS: 3.x
+
+## Notes
+
+- For PWA, add `@angular/pwa` and configure service worker (optional).
+- For CI, add a GitHub Actions workflow to `/.github/workflows` (optional).

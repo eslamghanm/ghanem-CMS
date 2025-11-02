@@ -1,0 +1,22 @@
+<div class="max-w-md mx-auto bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-6 shadow-sm">
+  <h1 class="text-xl font-semibold mb-4">تسجيل حساب جديد</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+    <div>
+      <label class="block text-sm mb-1">الاسم</label>
+      <input type="text" formControlName="name" class="w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-transparent px-3 py-2" />
+    </div>
+    <div>
+      <label class="block text-sm mb-1">البريد الإلكتروني</label>
+      <input type="email" formControlName="email" class="w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-transparent px-3 py-2" />
+    </div>
+    <div>
+      <label class="block text-sm mb-1">كلمة المرور</label>
+      <input type="password" formControlName="password" class="w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-transparent px-3 py-2" />
+    </div>
+    <div class="flex items-center gap-3">
+      <button type="submit" class="rounded-md bg-teal-600 text-white px-4 py-2 hover:bg-teal-700">تسجيل</button>
+      <a routerLink="/login" class="text-sm">لديك حساب؟ دخول</a>
+    </div>
+  </form>
+</div>
+

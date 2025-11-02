@@ -1,0 +1,24 @@
+/* Page container polish */
+main {
+  /* subtle gradient already applied via classes; keep CSS minimal */
+}
+
+.card {
+  @apply bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg shadow-sm;
+}
+
+.stat-title {
+  @apply text-xs text-neutral-500;
+}
+
+.stat-value {
+  @apply mt-1 text-2xl font-semibold;
+}
+
+.section-title {
+  @apply text-base font-medium;
+}
+
+.muted {
+  @apply text-xs text-neutral-500;
+}

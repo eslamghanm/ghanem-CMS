@@ -1,0 +1,14 @@
+<div class="fixed top-4 right-4 z-50 space-y-2">
+  <div *ngFor="let m of messages" class="pointer-events-auto rounded-lg px-4 py-3 shadow-md text-sm transition transform bg-white/90 dark:bg-neutral-800 border dark:border-neutral-700"
+       [class.border-green-500]="m.type==='success'" [class.border-red-500]="m.type==='error'" [class.border-blue-500]="m.type==='info'">
+    <div class="flex items-start gap-3">
+      <div class="mt-0.5" [ngClass]="{
+        'text-green-600': m.type==='success',
+        'text-red-500': m.type==='error',
+        'text-blue-500': m.type==='info'
+      }">●</div>
+      <div class="flex-1">{{ m.text }}</div>
+      <button class="text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200" (click)="dismiss(m.id)">✕</button>
+    </div>
+  </div>
+</div>

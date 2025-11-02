@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "settings": {
+    "clinicName": "Ghanem Dental Clinic",
+    "currency": "EGP",
+    "taxRate": 0.14,
+    "rounding": "nearest",
+    "theme": "system"
+  },
+  "patients": [
+    {"id":"pat_1","name":"Ahmed Hassan","phone":"0101000001","dob":"1990-03-01","notes":"","createdAt":"2024-01-05T10:00:00.000Z","updatedAt":"2024-01-05T10:00:00.000Z"},
+    {"id":"pat_2","name":"Mona Ali","phone":"0101000002","dob":"1988-07-12","notes":"","createdAt":"2024-01-06T10:00:00.000Z","updatedAt":"2024-01-06T10:00:00.000Z"},
+    {"id":"pat_3","name":"Omar Youssef","phone":"0101000003","dob":"1995-11-22","notes":"","createdAt":"2024-01-07T10:00:00.000Z","updatedAt":"2024-01-07T10:00:00.000Z"},
+    {"id":"pat_4","name":"Sara Mahmoud","phone":"0101000004","dob":"1992-05-17","notes":"","createdAt":"2024-01-08T10:00:00.000Z","updatedAt":"2024-01-08T10:00:00.000Z"},
+    {"id":"pat_5","name":"Hassan Ibrahim","phone":"0101000005","dob":"1985-09-30","notes":"","createdAt":"2024-01-09T10:00:00.000Z","updatedAt":"2024-01-09T10:00:00.000Z"},
+    {"id":"pat_6","name":"Laila Ahmed","phone":"0101000006","dob":"1998-12-03","notes":"","createdAt":"2024-01-10T10:00:00.000Z","updatedAt":"2024-01-10T10:00:00.000Z"}
+  ],
+  "treatments": [
+    {"id":"trt_1","name":"Teeth Cleaning","code":"CLN-001","duration":30,"basePrice":300,"category":"Cleaning","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_2","name":"Filling (Composite)","code":"FIL-001","duration":45,"basePrice":600,"category":"Filling","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_3","name":"Filling (Amalgam)","code":"FIL-002","duration":45,"basePrice":500,"category":"Filling","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_4","name":"Root Canal (Anterior)","code":"RCT-001","duration":90,"basePrice":1800,"category":"Root Canal","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_5","name":"Root Canal (Posterior)","code":"RCT-002","duration":120,"basePrice":2200,"category":"Root Canal","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_6","name":"Dental Crown (Porcelain)","code":"CRN-001","duration":120,"basePrice":3500,"category":"Crown","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_7","name":"Dental Crown (Zirconia)","code":"CRN-002","duration":120,"basePrice":4500,"category":"Crown","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_8","name":"Teeth Whitening (Office)","code":"WHI-001","duration":60,"basePrice":2000,"category":"Whitening","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_9","name":"Teeth Whitening (Home Kit)","code":"WHI-002","duration":30,"basePrice":1200,"category":"Whitening","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_10","name":"Extraction (Simple)","code":"EXT-001","duration":30,"basePrice":700,"category":"Extraction","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_11","name":"Extraction (Surgical)","code":"EXT-002","duration":60,"basePrice":1500,"category":"Extraction","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_12","name":"Dental Implant (Fixture)","code":"IMP-001","duration":120,"basePrice":10000,"category":"Implant","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_13","name":"Implant Crown","code":"IMP-002","duration":90,"basePrice":5000,"category":"Implant","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_14","name":"Scaling & Polishing","code":"CLN-002","duration":40,"basePrice":400,"category":"Cleaning","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_15","name":"Fluoride Treatment","code":"CLN-003","duration":20,"basePrice":250,"category":"Cleaning","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_16","name":"Orthodontic Consultation","code":"ORT-001","duration":30,"basePrice":300,"category":"Orthodontics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_17","name":"Braces Adjustment","code":"ORT-002","duration":45,"basePrice":500,"category":"Orthodontics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_18","name":"Retainer","code":"ORT-003","duration":30,"basePrice":1500,"category":"Orthodontics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_19","name":"X-ray (Periapical)","code":"IMG-001","duration":10,"basePrice":150,"category":"Imaging","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_20","name":"Panoramic X-ray","code":"IMG-002","duration":15,"basePrice":300,"category":"Imaging","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_21","name":"Consultation","code":"CON-001","duration":20,"basePrice":200,"category":"General","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_22","name":"Temporary Filling","code":"FIL-003","duration":30,"basePrice":300,"category":"Filling","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_23","name":"Fissure Sealant","code":"FIL-004","duration":25,"basePrice":350,"category":"Filling","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_24","name":"Inlay/Onlay","code":"FIL-005","duration":90,"basePrice":2500,"category":"Restoration","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_25","name":"Gingivectomy","code":"PER-001","duration":60,"basePrice":1500,"category":"Periodontics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_26","name":"Deep Cleaning","code":"PER-002","duration":60,"basePrice":1200,"category":"Periodontics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_27","name":"Veneer (Porcelain)","code":"EST-001","duration":90,"basePrice":4000,"category":"Aesthetics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_28","name":"Veneer (Composite)","code":"EST-002","duration":60,"basePrice":2500,"category":"Aesthetics","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_29","name":"Bridge (3-unit)","code":"CRN-003","duration":150,"basePrice":9000,"category":"Crown","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"},
+    {"id":"trt_30","name":"Night Guard","code":"ORL-001","duration":60,"basePrice":1500,"category":"Oral Health","createdAt":"2024-01-01T09:00:00.000Z","updatedAt":"2024-01-01T09:00:00.000Z"}
+  ],
+  "invoices": [
+    {"id":"inv_1","patientId":"pat_1","items":[{"treatmentId":"trt_1","name":"Teeth Cleaning","unitPrice":300,"quantity":1,"subtotal":300}],"createdAt":"2024-02-01T10:00:00.000Z","updatedAt":"2024-02-01T10:00:00.000Z","status":"paid","discountType":"percent","discountValue":0,"taxRate":0.14,"subtotal":300,"discountAmount":0,"taxableAmount":300,"tax":42,"total":342,"paymentMethod":"Cash"},
+    {"id":"inv_2","patientId":"pat_2","items":[{"treatmentId":"trt_2","name":"Filling (Composite)","unitPrice":600,"quantity":1,"subtotal":600}],"createdAt":"2024-02-02T10:00:00.000Z","updatedAt":"2024-02-02T10:00:00.000Z","status":"paid","discountType":"percent","discountValue":10,"taxRate":0.14,"subtotal":600,"discountAmount":60,"taxableAmount":540,"tax":75.6,"total":615.6,"paymentMethod":"Card"},
+    {"id":"inv_3","patientId":"pat_3","items":[{"treatmentId":"trt_5","name":"Root Canal (Posterior)","unitPrice":2200,"quantity":1,"subtotal":2200}],"createdAt":"2024-02-03T10:00:00.000Z","updatedAt":"2024-02-03T10:00:00.000Z","status":"draft","discountType":"fixed","discountValue":100,"taxRate":0.14,"subtotal":2200,"discountAmount":100,"taxableAmount":2100,"tax":294,"total":2394,"paymentMethod":"Cash"},
+    {"id":"inv_4","patientId":"pat_4","items":[{"treatmentId":"trt_8","name":"Teeth Whitening (Office)","unitPrice":2000,"quantity":1,"subtotal":2000}],"createdAt":"2024-02-04T10:00:00.000Z","updatedAt":"2024-02-04T10:00:00.000Z","status":"paid","discountType":null,"discountValue":0,"taxRate":0.14,"subtotal":2000,"discountAmount":0,"taxableAmount":2000,"tax":280,"total":2280,"paymentMethod":"Cash"},
+    {"id":"inv_5","patientId":"pat_5","items":[{"treatmentId":"trt_10","name":"Extraction (Simple)","unitPrice":700,"quantity":1,"subtotal":700}],"createdAt":"2024-02-05T10:00:00.000Z","updatedAt":"2024-02-05T10:00:00.000Z","status":"paid","discountType":null,"discountValue":0,"taxRate":0.14,"subtotal":700,"discountAmount":0,"taxableAmount":700,"tax":98,"total":798,"paymentMethod":"Cash"},
+    {"id":"inv_6","patientId":"pat_6","items":[{"treatmentId":"trt_6","name":"Dental Crown (Porcelain)","unitPrice":3500,"quantity":1,"subtotal":3500}],"createdAt":"2024-02-06T10:00:00.000Z","updatedAt":"2024-02-06T10:00:00.000Z","status":"draft","discountType":"percent","discountValue":5,"taxRate":0.14,"subtotal":3500,"discountAmount":175,"taxableAmount":3325,"tax":465.5,"total":3790.5,"paymentMethod":"Card"},
+    {"id":"inv_7","patientId":"pat_1","items":[{"treatmentId":"trt_14","name":"Scaling & Polishing","unitPrice":400,"quantity":1,"subtotal":400}],"createdAt":"2024-02-07T10:00:00.000Z","updatedAt":"2024-02-07T10:00:00.000Z","status":"paid","discountType":null,"discountValue":0,"taxRate":0.14,"subtotal":400,"discountAmount":0,"taxableAmount":400,"tax":56,"total":456,"paymentMethod":"Cash"},
+    {"id":"inv_8","patientId":"pat_2","items":[{"treatmentId":"trt_19","name":"X-ray (Periapical)","unitPrice":150,"quantity":1,"subtotal":150},{"treatmentId":"trt_2","name":"Filling (Composite)","unitPrice":600,"quantity":1,"subtotal":600}],"createdAt":"2024-02-08T10:00:00.000Z","updatedAt":"2024-02-08T10:00:00.000Z","status":"paid","discountType":null,"discountValue":0,"taxRate":0.14,"subtotal":750,"discountAmount":0,"taxableAmount":750,"tax":105,"total":855,"paymentMethod":"Cash"},
+    {"id":"inv_9","patientId":"pat_3","items":[{"treatmentId":"trt_1","name":"Teeth Cleaning","unitPrice":300,"quantity":1,"subtotal":300},{"treatmentId":"trt_15","name":"Fluoride Treatment","unitPrice":250,"quantity":1,"subtotal":250}],"createdAt":"2024-02-09T10:00:00.000Z","updatedAt":"2024-02-09T10:00:00.000Z","status":"paid","discountType":"percent","discountValue":5,"taxRate":0.14,"subtotal":550,"discountAmount":27.5,"taxableAmount":522.5,"tax":73.15,"total":595.65,"paymentMethod":"Card"},
+    {"id":"inv_10","patientId":"pat_4","items":[{"treatmentId":"trt_21","name":"Consultation","unitPrice":200,"quantity":1,"subtotal":200}],"createdAt":"2024-02-10T10:00:00.000Z","updatedAt":"2024-02-10T10:00:00.000Z","status":"draft","discountType":null,"discountValue":0,"taxRate":0.14,"subtotal":200,"discountAmount":0,"taxableAmount":200,"tax":28,"total":228,"paymentMethod":"Cash"}
+  ]
+}
+

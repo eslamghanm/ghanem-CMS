@@ -1,0 +1,51 @@
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+  <div class="card p-4 space-y-3">
+    <div class="text-sm font-medium">Clinic Settings</div>
+    <div>
+      <label class="label">Clinic Name</label>
+      <input class="input" [(ngModel)]="cfg.clinicName" />
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div>
+        <label class="label">Currency</label>
+        <input class="input" [(ngModel)]="cfg.currency" />
+      </div>
+      <div>
+        <label class="label">Tax Rate</label>
+        <input class="input" type="number" step="0.01" [(ngModel)]="cfg.taxRate" />
+      </div>
+      <div>
+        <label class="label">Rounding</label>
+        <select class="input" [(ngModel)]="cfg.rounding">
+          <option value="nearest">Nearest</option>
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label class="label">Theme</label>
+      <select class="input" [(ngModel)]="cfg.theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="system">Auto</option>
+      </select>
+    </div>
+    <div class="pt-2">
+      <button class="btn btn-primary" (click)="save()">Save</button>
+    </div>
+  </div>
+
+  <div class="card p-4 space-y-3">
+    <div class="text-sm font-medium">Data Management</div>
+    <div class="flex items-center gap-2">
+      <button class="btn btn-outline" (click)="exportAll()">Export JSON</button>
+      <label class="btn btn-outline cursor-pointer">
+        <input type="file" accept="application/json" class="hidden" (change)="importAll($event)" />
+        Import JSON
+      </label>
+      <button class="btn btn-outline" (click)="clearAll()">Clear Data</button>
+    </div>
+    <p class="text-xs text-neutral-500">All data is stored locally in your browser under key <code>gh_dental_v1</code>.</p>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="mb-6 flex items-center gap-3">
+  <img src="assets/logo.png" alt="شعار" class="h-12 md:h-14 w-auto p-1 rounded-lg ring-1 ring-neutral-200 dark:ring-neutral-700 bg-white" loading="lazy" decoding="async" />
+  <div class="text-2xl font-semibold">لوحة التحكم</div>
+  <div class="muted">نظرة عامة على الأداء</div>
+  <div class="flex-1"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="card p-4">
+    <div class="stat-title">إجمالي الإيرادات</div>
+    <div class="stat-value">{{ totalRevenue | number:'1.2-2' }}</div>
+  </div>
+  <div class="card p-4">
+    <div class="stat-title">المبالغ المعلقة</div>
+    <div class="stat-value">{{ outstanding | number:'1.2-2' }}</div>
+  </div>
+  <div class="card p-4">
+    <div class="stat-title">عدد المرضى</div>
+    <div class="stat-value">{{ patientsCount }}</div>
+  </div>
+  <div class="card p-4">
+    <div class="stat-title">العلاج الأكثر شيوعًا</div>
+    <div class="mt-1 text-lg font-medium">{{ mostCommonTreatment }}</div>
+  </div>
+</div>
+
+<div class="card p-4 mt-6">
+  <div class="flex items-center justify-between">
+    <div class="section-title">الإيراد الأخير</div>
+    <div class="muted">آخر {{ lastTotals.length }} فواتير</div>
+  </div>
+  <svg class="mt-3 w-full" [attr.viewBox]="'0 0 ' + chartWidth + ' ' + chartHeight" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="sparkGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#14b8a6" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+    <!-- grid lines -->
+    <g stroke="#e5e7eb" stroke-width="1" opacity="0.6">
+      <line *ngFor="let y of gridY" [attr.x1]="chartPadding" [attr.x2]="chartWidth - chartPadding" [attr.y1]="y" [attr.y2]="y" />
+    </g>
+    <!-- area fill under line -->
+    <path [attr.d]="areaPath" fill="url(#sparkGradient)"></path>
+    <!-- line path -->
+    <path [attr.d]="linePath" fill="none" stroke="#14b8a6" stroke-width="2" />
+    <!-- points -->
+    <g>
+      <circle *ngFor="let p of pts; let i = index" [attr.cx]="p.x" [attr.cy]="p.y"
+              [attr.r]="hoverIndex === i ? 3.5 : 2" [attr.fill]="hoverIndex === i ? '#0f766e' : '#14b8a6'"
+              (mouseenter)="setHover(i)" (mouseleave)="setHover(null)" />
+    </g>
+  </svg>
+  <div class="muted mt-2 flex items-center gap-4">
+    <div>الأقل: {{ minVal | number:'1.0-0' }}</div>
+    <div>الأعلى: {{ maxVal | number:'1.0-0' }}</div>
+  </div>
+</div>

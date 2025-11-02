@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-3">
+  <div>
+    <label class="label">Name</label>
+    <input class="input" formControlName="name" placeholder="Treatment name" />
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div>
+      <label class="label">Code</label>
+      <input class="input" formControlName="code" placeholder="TRT-001" />
+    </div>
+    <div>
+      <label class="label">Category</label>
+      <input class="input" formControlName="category" placeholder="Category" />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div>
+      <label class="label">Duration (min)</label>
+      <input class="input" type="number" formControlName="duration" />
+    </div>
+    <div>
+      <label class="label">Base Price</label>
+      <input class="input" type="number" formControlName="basePrice" />
+    </div>
+  </div>
+  <div>
+    <label class="label">Description</label>
+    <textarea class="input" rows="3" formControlName="description" placeholder="Optional description"></textarea>
+  </div>
+  <div class="pt-2">
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Save Treatment</button>
+  </div>
+</form>
