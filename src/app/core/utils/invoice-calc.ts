@@ -20,8 +20,7 @@ export function calculateBreakdown(
     rounding
   );
   const taxableAmount = Math.max(0, subtotal - discountAmount);
-  const tax = round(taxableAmount * (taxRate || 0), rounding);
-  const total = round(taxableAmount + tax, rounding);
+  const tax = 0;
+  const total = round(taxableAmount, rounding);
   return { subtotal, discountAmount, taxableAmount, tax, total };
 }
-

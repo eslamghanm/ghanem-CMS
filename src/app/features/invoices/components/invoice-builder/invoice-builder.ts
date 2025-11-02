@@ -20,7 +20,6 @@ export class InvoiceBuilder {
   form = this.fb.group({
     patientId: [''],
     paymentMethod: ['Cash'],
-    discountType: ['percent' as 'percent'|'fixed'],
     discountValue: [0],
   });
 
@@ -50,13 +49,13 @@ export class InvoiceBuilder {
     const inv = this.invoices.createDraft({
       patientId: v.patientId,
       items: this.items,
-      discountType: v.discountType,
+      discountType: 'fixed',
       discountValue: Number(v.discountValue)||0,
       paymentMethod: v.paymentMethod,
     });
     if (status === 'paid') this.invoices.markPaid(inv.id);
     this.toast.success(`Invoice saved as ${status}`);
     this.items = [];
-    this.form.reset({ paymentMethod: 'Cash', discountType: 'percent', discountValue: 0, patientId: '' });
+    this.form.reset({ paymentMethod: 'Cash', discountValue: 0, patientId: '' });
   }
 }

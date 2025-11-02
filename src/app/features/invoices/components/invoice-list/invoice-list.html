@@ -1,19 +1,15 @@
 <div class="flex items-center justify-between gap-2">
   <input class="input" placeholder="Search invoices by patient or id..." [(ngModel)]="query" />
-  <div class="flex items-center gap-2">
-    <button class="btn btn-outline" (click)="exportCsv()">Export CSV</button>
-    <button class="btn btn-outline" (click)="exportJson()">Export JSON</button>
-  </div>
 </div>
 
 <div class="mt-3 divide-y dark:divide-neutral-800">
-  <div *ngFor="let i of filtered" class="py-3 flex items-center justify-between">
+  <div *ngFor="let i of filtered" class="py-3 flex items-center justify-between transition-colors rounded-md -mx-2 px-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 animate-slide-up">
     <div>
       <div class="font-medium">Invoice {{ i.id }}</div>
       <div class="text-xs text-neutral-500">{{ patients.get(i.patientId)?.name || '-' }} • {{ i.status | uppercase }} • {{ i.createdAt | date:'short' }}</div>
     </div>
     <div class="flex items-center gap-2">
-      <a class="btn btn-outline" [routerLink]="['/invoices/print', i.id]" target="_blank">Print</a>
+      <a class="btn btn-outline" [routerLink]="['/invoices/print', i.id]" target="_blank">Export PDF</a>
       <button class="btn btn-primary" *ngIf="i.status!=='paid'" (click)="markPaid(i.id)">Mark Paid</button>
     </div>
   </div>

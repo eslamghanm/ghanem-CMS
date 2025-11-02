@@ -1,4 +1,4 @@
-<div class="mb-6 flex items-center gap-3">
+<div class="mb-6 flex items-center gap-3 animate-fade-in">
   <img src="assets/logo.png" alt="شعار" class="h-12 md:h-14 w-auto p-1 rounded-lg ring-1 ring-neutral-200 dark:ring-neutral-700 bg-white" loading="lazy" decoding="async" />
   <div class="text-2xl font-semibold">لوحة التحكم</div>
   <div class="muted">نظرة عامة على الأداء</div>
@@ -6,25 +6,25 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-  <div class="card p-4">
+  <div class="card p-4 animate-slide-up">
     <div class="stat-title">إجمالي الإيرادات</div>
     <div class="stat-value">{{ totalRevenue | number:'1.2-2' }}</div>
   </div>
-  <div class="card p-4">
+  <div class="card p-4 animate-slide-up">
     <div class="stat-title">المبالغ المعلقة</div>
     <div class="stat-value">{{ outstanding | number:'1.2-2' }}</div>
   </div>
-  <div class="card p-4">
+  <div class="card p-4 animate-slide-up">
     <div class="stat-title">عدد المرضى</div>
     <div class="stat-value">{{ patientsCount }}</div>
   </div>
-  <div class="card p-4">
+  <div class="card p-4 animate-slide-up">
     <div class="stat-title">العلاج الأكثر شيوعًا</div>
     <div class="mt-1 text-lg font-medium">{{ mostCommonTreatment }}</div>
   </div>
 </div>
 
-<div class="card p-4 mt-6">
+<div class="card p-4 mt-6 animate-slide-up">
   <div class="flex items-center justify-between">
     <div class="section-title">الإيراد الأخير</div>
     <div class="muted">آخر {{ lastTotals.length }} فواتير</div>

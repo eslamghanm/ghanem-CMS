@@ -5,6 +5,9 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #171717;
+  --brand: #14b8a6;
+  --brand-dark: #0d9488;
+  --accent: #f59e0b;
 }
 .dark {
   --color-bg: #0a0a0a;
@@ -20,17 +23,46 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-.card {
-  @apply rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-soft;
+/* Subtle background accent */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20% -10% auto -10%;
+  height: 40vh;
+  pointer-events: none;
+  background: radial-gradient(1200px 400px at 50% -200px, color-mix(in oklab, var(--brand) 25%, transparent) 0%, transparent 60%);
+  z-index: 0;
 }
 
-.btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition shadow-sm hover:shadow;
-}
-.btn-primary { @apply bg-teal-600 text-white hover:bg-teal-700; }
+.card { @apply relative rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-soft transition-all duration-300 ease-out; }
+.card:hover { @apply shadow-lg -translate-y-0.5; }
+
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-200 shadow-sm hover:shadow active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-teal-500; }
+.btn-primary { @apply text-white bg-gradient-to-l from-brand to-teal-600 hover:from-teal-500 hover:to-teal-700; }
 .btn-outline { @apply border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800; }
-.input { @apply w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-teal-500; }
+.input { @apply w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand; }
 .label { @apply block text-sm font-medium text-neutral-700 dark:text-neutral-300; }
+
+/* Typography helpers */
+.muted { @apply text-neutral-500 dark:text-neutral-400; }
+.section-title { @apply text-base font-semibold; }
+.stat-title { @apply text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400; }
+.stat-value { @apply text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-l from-neutral-900 to-teal-700 dark:from-white dark:to-teal-300; }
+
+/* Simple motion classes */
+@keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slide-up { from { transform: translateY(8px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+@keyframes scale-in { from { transform: scale(.98); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+
+.animate-fade-in { animation: fade-in .5s var(--ease, cubic-bezier(.22,.9,.33,1)) both; }
+.animate-slide-up { animation: slide-up .5s var(--ease, cubic-bezier(.22,.9,.33,1)) both; }
+.animate-scale-in { animation: scale-in .3s var(--ease, cubic-bezier(.22,.9,.33,1)) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in, .animate-slide-up, .animate-scale-in { animation: none; }
+  .card { transition: none; }
+  .btn { transition: none; }
+}
 /* Basic RTL and Arabic defaults */
 html, body {
   direction: rtl;

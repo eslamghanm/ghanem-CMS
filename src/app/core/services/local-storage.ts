@@ -106,7 +106,7 @@ export class LocalStorageService {
       settings: {
         clinicName: 'Ghanem Dental Clinic',
         currency: 'EGP',
-        taxRate: 0.14,
+        taxRate: 0,
         rounding: 'nearest',
         theme: 'light',
       },

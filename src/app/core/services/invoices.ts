@@ -31,7 +31,7 @@ export class Invoices {
   }): Invoice {
     const now = nowIso();
     const s = this.settings.get();
-    const tax = params.taxRate ?? s.taxRate;
+    const tax = 0; // taxes disabled
     const breakdown = calculateBreakdown(
       params.items,
       tax,
